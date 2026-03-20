@@ -13,12 +13,18 @@
 **/.pytest_cache/
 **/.mypy_cache/
 **/.aws-sam/
+**/*.egg-info/
+**/pip-wheel-metadata/
+**/*.whl
+**/*.sqlite3
 
 # Node / frontend
 **/node_modules/
 **/dist/
 **/build/
 **/.cache/
+**/coverage/
+**/*.map
 
 # Secrets / env files
 **/.env
@@ -27,17 +33,37 @@
 !**/.env.*.example
 **/creds/*.json
 **/*service-account*.json
+**/*.pem
+**/*.key
+**/*.p12
+**/*.crt
+**/*.cert
+**/*.cache.env
 
 # Logs and runtime
 **/*.log
 *.pid
+**/*.out
+**/*.err
+**/nohup.out
 
 # Large local artifacts
 *.zip
 
+# Coverage and test artifacts
+**/.coverage
+**/*.cover
+**/*.cov
+**/nosetests.xml
+**/test-results.xml
+**/junit.xml
+
 # ECS deployment configs
 **/ecs-*.json
 
-# Accounts service deployment configs (track templates only)
+# Accounts service deployment configs
 accounts-service/*-function.json
 !accounts-service/*-function.example.json
+
+# Local deployment helpers
+**/Makefile
