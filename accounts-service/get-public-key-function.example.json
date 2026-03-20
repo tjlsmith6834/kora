@@ -1,0 +1,26 @@
+{
+  "FunctionName": "get-public-key-function",
+  "Role": "arn:aws:iam::__ACCOUNT_ID__:role/LambdaExecutionRoleAccountsService",
+  "PackageType": "Image",
+  "Code": {
+    "ImageUri": "__ACCOUNT_ID__.dkr.ecr.__AWS_REGION__.amazonaws.com/kora/accounts-service:get-public-key-function-latest"
+  },
+  "VpcConfig": {
+    "SubnetIds": [
+      "__SUBNET_ID_1__",
+      "__SUBNET_ID_2__",
+      "__SUBNET_ID_3__"
+    ],
+    "SecurityGroupIds": [
+      "__SECURITY_GROUP_ID__"
+    ]
+  },
+  "Environment": {
+    "Variables": {
+      "NODE_ENV": "production"
+    }
+  },
+  "Timeout": 15,
+  "MemorySize": 512,
+  "Publish": true
+}

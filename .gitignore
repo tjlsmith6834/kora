@@ -37,3 +37,7 @@
 
 # ECS deployment configs
 **/ecs-*.json
+
+# Accounts service deployment configs (track templates only)
+accounts-service/*-function.json
+!accounts-service/*-function.example.json
