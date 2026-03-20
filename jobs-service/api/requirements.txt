@@ -1,0 +1,11 @@
+-e ./common/db
+-e ./common/models_schemas
+-e ./common/utils
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+celery
+python-multipart
+redis
+boto3

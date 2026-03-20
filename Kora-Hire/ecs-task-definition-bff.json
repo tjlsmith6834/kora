@@ -1,0 +1,41 @@
+{
+  "family": "hire-backend-task",
+  "executionRoleArn": "arn:aws:iam::430118846553:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::430118846553:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "containerDefinitions": [
+    {
+      "name": "hire-backend",
+      "image": "430118846553.dkr.ecr.us-east-2.amazonaws.com/kora/hire:backend-latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8000,
+          "name": "backend",
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        { "name": "ENVIRONMENT","value": "production"}
+      ],
+      "secrets": [
+        { "name": "JOBS_SERVICE_BASE_URL", "valueFrom": "/kora/jobs/prod/base_url"},
+        { "name": "JOBS_SERVICE_RUBRICS_URL", "valueFrom": "/kora/jobs/prod/rubrics_url"},
+        { "name": "JOBS_SERVICE_TASKS_URL", "valueFrom": "/kora/jobs/prod/tasks_url"},
+        { "name": "APPLICATIONS_SERVICE_BASE_URL", "valueFrom": "/kora/applications/prod/base_url"},
+        { "name": "FIREBASE_APPLICATION_CREDENTIALS", "valueFrom":  "/kora/firebase_auth/prod/application_credentials"}
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/hire/backend/backend-task",
+          "awslogs-region": "us-east-2",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}

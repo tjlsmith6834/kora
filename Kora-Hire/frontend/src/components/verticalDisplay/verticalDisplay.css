@@ -1,0 +1,6 @@
+.vertical-display{
+    gap: var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

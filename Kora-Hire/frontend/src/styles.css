@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@400;500&family=Varela+Round&display=swap');
+
+:root {
+    --max-content-width: 920px;
+
+
+    /*======================*/
+    /*         Colors       */
+    /*======================*/
+
+    /* ###Text */
+    --color-h1: #2F5740;
+    --color-h2: #446B57;
+    --color-h3: #4A4A4A;
+    --color-body: #5A5A5A;
+    --color-user-input: #5A5A5A;
+    --color-link: #3A8C8E;
+
+    /* ###Buttons */
+    --color-positive: #3A8C8E;
+    --color-positive-hover: #2e6e70;
+    --color-postive-text: #ffffff;
+
+    --color-negative: #D9534F;
+    --color-negative-hover: #b23e3b;
+    --color-negative-text: #ffffff;
+
+    --color-tertiary-base: #e6a634;
+    --color-tertiary-hover: #d18f1d;
+    --color-tertiary-text: #ffffff;
+
+    --color-neutral: #5A5A5A;
+    --color-neutral-hover: #4A4A4A;
+    --color-neutral-text: #ffffff;
+
+    --color-aux: #A8C3A0;          /* primary fill */
+    --color-aux-hover: #556b1f;
+
+    --color-disabled: #CCCCCC;
+    --color-dsiabled-text: #666666;
+
+    /* ### File/Dropzone Colors */
+    --color-file-added: #F3F8EE;
+    --color-file-hover-remove: #F8D7DA;
+    --color-file-hover-add: #F3F8EE;
+    --color-file-drop-border-hover-add: #2F5740;
+    --file-drop-border-neutral: 2px dashed #aaa;
+
+    /* ###Spinner */
+    --color-spinner: #0288D1;
+
+    /*====================*/
+    /*         Text       */
+    /*====================*/
+
+    /* ### Fonts */
+    --typeface-body: 'Lexend', sans-serif;
+    --typeface-header: 'Varela Round', sans-serif;
+    --typeface-user-input: 'Inter', sans-serif;
+
+    /* ### Font Sizes */
+    --font-size-h1: 3rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.25rem;
+    --font-size-body: 1rem;
+    --font-size-user-input: .875rem;
+
+
+    /*===============================*/
+    /*         Shape & Spacing       */
+    /*===============================*/
+
+    /* ### Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+
+    /* ### Border radius */
+    --radius-sm: 8px; /*Buttons, inputs*/
+    --radius-lg: 16px; /*Card borders*/
+
+    /*===========================*/
+    /*         COMPONENTS        */
+    /*===========================*/
+
+    /* ###Cards */
+    --color-card-background: white;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* ### borders*/
+    --card-border: 1px solid #aaa;
+    --soft-border: 1px solid #ccc;
+    --extra-soft-border: 1px solid #eee;
+    --soft-border-thick: 2px solid #ccc;
+    --extra-soft-border-thick: 2px solid #eee;
+}

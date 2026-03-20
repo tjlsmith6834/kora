@@ -1,0 +1,25 @@
+### Output format:
+1. Strictly output the result in valid JSON format.
+2. Do NOT include any explanations, comments, or extra text.
+3. Ensure the output starts and ends with JSON curly braces {{ }}.
+4. Follow this exact JSON structure:
+{
+    "category": "<rubric category above>",
+    "focus": "<evaluation focus above>",
+    "criteria": [
+        "Concrete skill or experience 1",
+        "Concrete skill or experience 2",
+        "Concrete skill or experience 3"
+    ]
+}
+
+### Example Output:
+{
+    "category": "Action Orientation",
+    "focus": "Does the candidate demonstrate a strong drive to act quickly, take initiative, and achieve results?",
+    "criteria": [
+        "Proven ability to meet or exceed sales targets",
+        "Demonstrated initiative in pipeline development",
+        "Track record of proactive follow-through on client engagement"
+    ]
+}

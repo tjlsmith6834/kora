@@ -1,0 +1,6 @@
+###Instructions
+1. For each question in the open questions, provide a ranking 1-100 for relevance
+2. The relevance score show be based on:
+    •	(Most important) The size of the gap in the application that the question is most relevant to
+    •	(Next-most important) The weight of the category that the question is relevant to
+    •   (Least important) Imagine yourself as a job interviewer and guess how useful this question would be in assessing the candidate

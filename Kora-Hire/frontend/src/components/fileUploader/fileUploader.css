@@ -1,0 +1,56 @@
+.file-zone {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 10px 0;
+  padding: 30px;
+  border-radius: 6px;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* All clickable zones */
+.file-zone.clickable {
+  cursor: pointer;
+}
+
+/* has file + clickable */
+.file-zone.has-file.clickable {
+  background-color: #e7f6ec;
+  border: 2px solid #e7f6ec;
+}
+
+.file-zone.has-file.clickable:hover {
+  background-color: #f8d7da; /* light red */
+  border-color: #f8d7da;
+}
+
+/* no file + clickable */
+.file-zone.no-file.clickable {
+  background-color: #ffffff;
+  border: 2px dashed #bbb;
+}
+
+.file-zone.no-file.clickable:hover {
+  background-color: #eafbe5; /* light green */
+  border-color: #7bc47f;
+}
+
+/*clickable + dragging */
+.file-zone.clickable.dragging {
+  background-color: #e0f7fa;
+  border: 2px solid #00acc1;
+}
+
+/* readonly */
+.file-zone.readonly {
+  background-color: #f9f9f9;
+  border: 2px solid #ccc;
+  cursor: default;
+  pointer-events: none;
+}
+
+
+
+.file-title {
+  font-weight: bold;
+}

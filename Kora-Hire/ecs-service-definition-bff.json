@@ -1,0 +1,48 @@
+{
+  "cluster": "kora-cluster-prod",
+  "serviceName": "hire-backend-service",
+  "taskDefinition": "hire-backend-task",
+  "launchType": "FARGATE",
+  "desiredCount": 1,
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": [
+        "subnet-0b6ae6c98bd260fac",
+        "subnet-0331005b22463e499",
+        "subnet-02b25656187b70d4f"
+      ],
+      "securityGroups": [
+        "sg-05640fb4e4ec56e6a"
+      ],
+      "assignPublicIp": "DISABLED"
+    }
+  },
+  "serviceConnectConfiguration": {
+    "enabled": true,
+    "namespace": "kora.local",
+    "services": [
+      {
+        "portName": "backend",
+        "discoveryName": "hire-backend-service",
+        "clientAliases": [
+          { "dnsName": "hire-backend-service.kora.local", "port": 8000 }
+        ]
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "/hire-service/backend/service-connect",
+        "awslogs-region": "us-east-2",
+        "awslogs-stream-prefix": "ecs"
+      }
+    }
+  },
+  "loadBalancers": [
+        {
+          "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:430118846553:targetgroup/ff7eb3cb3f5f93b6",
+          "containerName":  "hire-backend",
+          "containerPort":  8000
+        }
+      ]
+}

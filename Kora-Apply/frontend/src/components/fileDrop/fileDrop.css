@@ -1,0 +1,54 @@
+.file-zone {
+    width: 100%;
+    margin: 0;
+    margin-bottom: var(--spacing-sm);
+    cursor: pointer;
+}
+
+.file-zone p{
+    margin:0;
+}
+
+.drop-zone {
+    border: var(--file-drop-border-neutral);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--spacing-md);
+    min-height: 4rem;
+    background-color: var(--color-card-background);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.drop-zone:hover {
+    background-color: var(--color-file-hover-add);
+    border-color: var(--color-file-drop-border-hover-add);
+}
+
+.drop-zone.dragging {
+    background-color: var(--color-file-hover-add);
+    border-color: var(--color-file-drop-border-hover-add);
+}
+
+.uploaded-file-wrapper{
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--spacing-md);
+    min-height: 4rem;
+    background-color: var(--color-file-added);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.uploaded-file-wrapper:hover {
+    background-color: var(--color-file-hover-remove); /* Light red (Bootstrap danger color) */
+}
+
+.file-title{
+    font-weight: bold;
+    margin: 0;
+}

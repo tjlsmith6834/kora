@@ -1,0 +1,22 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;         /* respects parent (#apply-container) */
+  max-width: 920px;    /* optional cap for nice readability */
+  margin: 0 auto;      /* centers horizontally if block */
+  height: auto;        /* don’t force full viewport */
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.content-container {
+    width: calc(100% - 40px); /* Guarantees 20px space on both sides */
+    max-width: 920px;
+    margin: 0 auto; /* Horizontally center the content */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+

@@ -1,0 +1,13 @@
+-e ./common/models_schemas
+-e ./common/storage_retrieval_services
+fastapi
+uvicorn
+sqlalchemy
+celery
+boto3
+botocore
+python-multipart
+psycopg2-binary
+redis
+tenacity
+cloudconvert

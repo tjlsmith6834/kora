@@ -1,0 +1,7 @@
+Organize the following job criteria into **5-7 distinct, competency-focused categories**.
+
+1. Each category must represent a unique competency or skill area (e.g., Strategic Thinking, Collaboration, Adaptability, Leadership, Technical Skills).
+2. Group multiple related criteria into each category. Summarize the criteria as part of the category description, avoiding categories with only one criterion.
+3. Categories should focus on broader competencies and behaviors, such as problem-solving, leadership, collaboration, or industry knowledge.
+4. **Important** Do not use categories that do not reflect specific competencies or behaviors (DO NOT use "education," "experience," "skills," etc as categories)
+5. Ensure all provided criteria are included in the categories. Do not create separate categories for individual criteria unless absolutely necessary.

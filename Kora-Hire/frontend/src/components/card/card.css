@@ -1,0 +1,20 @@
+/* Card Container */
+.card {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    background-color: #FFFFFF;
+    border: var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card.clickable:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+}

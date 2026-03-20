@@ -1,0 +1,24 @@
+# Ignore node_modules to avoid conflicts and unnecessary copies
+node_modules
+
+# Ignore local environment variables
+.env
+.env.dev
+.env.production
+
+# Ignore log files
+*.log
+
+# Ignore the dist directory, as it's built during the Docker process
+dist/
+
+# Ignore IDE/editor files
+.idea/
+.vscode/
+
+# Ignore debug files that are not needed in the container
+debug-task-definition.json
+
+# Ignore any other files/folders that are specific to local development but not needed in production
+.gitignore
+.git/

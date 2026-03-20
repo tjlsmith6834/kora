@@ -1,0 +1,7 @@
+Analyze the following job description and extract all explicit and implicit criteria.
+
+1. Include technical skills, qualifications, experience, mindset, situational requirements, and cultural fit.
+2. Go beyond explicitly stated requirements by identifying implicit traits or abilities that are likely to be valuable for success in the role.
+3. Provide a comprehensive list of criteria in plain text, formatted as one criterion per line. Do not include extra text.
+4. Where possible be concrete in the requirements needed for the candidate.
+5. Be granular. When possible, break topics into multiple criteria highlighting different aspects of the job's needs.

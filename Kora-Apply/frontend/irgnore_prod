@@ -1,0 +1,54 @@
+const webpack = require("webpack");
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+module.exports = (env, argv) => {
+  const isProduction = argv.mode === "production";
+
+  return {
+    mode: isProduction ? "production" : "development",
+    entry: path.join(__dirname, "src/index.tsx"),
+    output: {
+      path: path.resolve(__dirname, "dist"),
+      filename: "kora-apply.js",
+      library: {
+        name: "KoraApplyWidget",
+        type: "umd",
+        export: "default",
+      },
+      globalObject: "this",
+    },
+    module: {
+      rules: [
+        {
+          test: /\.(ts|tsx)$/,
+          exclude: /node_modules/,
+          use: "ts-loader",
+        },
+        {
+          test: /\.css$/,
+          use: [
+            isProduction ? MiniCssExtractPlugin.loader : "style-loader",
+            "css-loader",
+          ],
+        },
+      ],
+    },
+    plugins: [
+      new webpack.DefinePlugin({
+        "process.env.REACT_APP_API_BASE_URL": JSON.stringify(
+          isProduction
+            ? "https://applyapi.hirekora.com"
+            : "http://localhost:8001"
+        ),
+      }),
+      ...(isProduction
+        ? [
+            new MiniCssExtractPlugin({
+              filename: "[name].[contenthash].css", // separate CSS file
+            }),
+          ]
+        : []),
+    ],
+  };
+};

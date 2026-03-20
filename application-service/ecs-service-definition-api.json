@@ -1,0 +1,41 @@
+{
+  "cluster": "kora-cluster-prod",
+  "serviceName": "applications-api-service",
+  "taskDefinition": "applications-api-task:21",
+  "launchType": "FARGATE",
+  "desiredCount": 1,
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": [
+        "subnet-0b6ae6c98bd260fac",
+        "subnet-0331005b22463e499",
+        "subnet-02b25656187b70d4f"
+      ],
+      "securityGroups": [
+        "sg-0006ca50cfa70bb29"
+      ],
+      "assignPublicIp": "DISABLED"
+    }
+  },
+  "serviceConnectConfiguration": {
+    "enabled": true,
+    "namespace": "kora.local",
+    "services": [
+      {
+        "portName": "api",
+        "discoveryName": "applications-api-service",
+        "clientAliases": [
+          { "dnsName": "applications-api-service.kora.local", "port": 8002 }
+        ]
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "/applications-service/api/service-connect",
+        "awslogs-region": "us-east-2",
+        "awslogs-stream-prefix": "ecs"
+      }
+    }
+  }
+}

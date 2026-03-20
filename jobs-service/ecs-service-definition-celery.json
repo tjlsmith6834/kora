@@ -1,0 +1,20 @@
+{
+  "cluster": "kora-cluster-prod",
+  "serviceName": "jobs-celery-service",
+  "taskDefinition": "jobs-celery-task",
+  "launchType": "FARGATE",
+  "desiredCount": 1,
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": [
+        "subnet-0b6ae6c98bd260fac",
+        "subnet-0331005b22463e499",
+        "subnet-02b25656187b70d4f"
+      ],
+      "securityGroups": [
+        "sg-0533be2fc8b67fefd"
+      ],
+      "assignPublicIp": "DISABLED"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                        // Good balance of modern features + compatibility
+    "module": "CommonJS",                      // Required for Node.js runtime
+    "lib": ["ES2020"],
+    "outDir": "dist",                          // Compiled JS output goes here
+    "rootDir": "src",                          // Your TypeScript source lives here
+    "strict": true,                            // Enables strict typing (recommended)
+    "esModuleInterop": true,                   // Allows default imports from CommonJS modules like `pg`
+    "resolveJsonModule": true,                 // Allows importing .json files
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,70 @@
+services:
+  validate-organization-id-function:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: validate-organization-id-function
+    ports:
+      - "9000:8080"
+    command: [ "handlers/validateOrganizationId.handler" ]
+    env_file:
+      - .env.dev
+    networks:
+      - kora_dev_network
+
+  create-user-function:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: create-user-function
+    ports:
+      - "9001:8080"
+    command: [ "handlers/createUser.handler" ]
+    env_file:
+      - .env.dev
+    networks:
+      - kora_dev_network
+
+  get-user-function:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: get-user-function
+    ports:
+      - "9002:8080"
+    command: [ "handlers/getUser.handler" ]
+    env_file:
+      - .env.dev
+    networks:
+      - kora_dev_network
+
+  validate-public-key-function:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: validate-public-key-function
+    ports:
+      - "9003:8080"
+    command: [ "handlers/validatePublicKey.handler" ]
+    env_file:
+      - .env.dev
+    networks:
+      - kora_dev_network
+
+  get-public-key-function:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: get-public-key-function
+    ports:
+      - "9004:8080"
+    command: [ "handlers/getPublicKey.handler" ]
+    env_file:
+      - .env.dev
+    networks:
+      - kora_dev_network
+
+networks:
+  kora_dev_network:
+    name: kora_dev_network
+    external: true

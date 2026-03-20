@@ -1,0 +1,15 @@
+### Mental Model: Rubber Bands and Weights
+1. **Strengths**: Each strength acts like a "rubber band" supporting the weight (candidate's score) at a specific level.
+   - Roughly consider alignment level as a number: low = 1, medium = 2, high = 3
+   - A strength with high alignment level provides tight support whereas a strength with low alignment level is more slack. .
+   - If the score is above the strength's level, the rubber band provides **no upward support** (it goes "slack").
+   - If the score is below the strength's level, the rubber band provides **upward pull** (resistance), stronger the further the score drops below it.
+
+2. **Weaknesses**: Each weakness acts like a "weight" pulling the score downward, scaled to its alignment level.
+   - Roughly consider alignment level as a number: low = 1, medium = 2, high = 3
+   - A weakness with a score of 1 provides a small but noticeable downward force.
+   - Higher weaknesses (e.g., 3) adds significant downward pull.
+
+3. **Combining Forces**:
+   - Strengths and weaknesses interact. Even very strong strengths will be **pulled downward** by even small weaknesses.
+   - The score will "settle" at an equilibrium point where the **upward forces** (from strengths) and the **downward forces** (from weaknesses) balance out.

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDK Test</title>
+    <script>
+        console.log("📜 Loading kora-apply.js...");
+    </script>
+    <script src="http://localhost:3001/kora-apply.js"></script>
+</head>
+
+<body style="background: hotpink;">
+    <h1>SDK Test Page</h1>
+    <div id="apply-container" style="max-width: 600px; margin: auto;"></div>
+    <script>
+        console.log("✅ kora-apply.js script loaded!");
+        console.log("🔍 typeof window.KoraApplyWidget (before wait):", typeof window.KoraApplyWidget);
+        console.log("🔍 window.KoraApplyWidget value:", window.KoraApplyWidget);
+        console.log("🔍 window.KoraApplyWidget.default:", window.KoraApplyWidget?.default);
+        console.log("🔍 window.KoraApplyWidget.default.init:", window.KoraApplyWidget?.default?.init);
+        console.log("🔍 window.KoraApplyWidget.KoraApplyWidget:", window.KoraApplyWidget?.KoraApplyWidget);
+        console.log("🔍 window.KoraApplyWidget.KoraApplyWidget.init:", window.KoraApplyWidget?.KoraApplyWidget?.init);
+        function waitForWidget(attempt = 1) {
+            console.log(`🔍 Attempt ${attempt}: Checking window.KoraApplyWidget...`, window.KoraApplyWidget);
+
+            if (window.KoraApplyWidget) {
+                console.log("✅ KoraApplyWidget loaded successfully!");
+                console.log("🔍 Final window.KoraApplyWidget:", window.KoraApplyWidget);
+                console.log("🔍 window.KoraApplyWidget.init exists:", typeof window.KoraApplyWidget.init);
+
+                if (typeof window.KoraApplyWidget.init !== "function") {
+                    console.error("❌ window.KoraApplyWidget.init is NOT a function!");
+                } else {
+                    console.log("✅ Calling window.KoraApplyWidget.init...");
+                    window.KoraApplyWidget.init("apply-container", {
+                        jobID: '1981cd0c-3c2c-47f8-b515-1e780bb655f2',
+                        publicKey: 'OJWEIu29qPbYKZfA83vWTiLkRM5uBns8V7QhcDjXkMPvbXYFZCtHAkGeLWq0s9zUOJWEIu29qPbYKZfA83vWTiLkRM5uBns8V7QhcDjXkMPvbXYFZCtHAkGeLWq0s9zU'
+                    });
+                }
+            } else {
+                console.warn(`⏳ Attempt ${attempt}: Waiting for KoraApplyWidget...`);
+                setTimeout(() => waitForWidget(attempt + 1), 500);
+            }
+        }
+        waitForWidget();
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+.tab-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px; /* Adjusted for consistency */
+}
+
+.tab {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none; /* Remove button border */
+    background: transparent; /* Remove default button background */
+    font-family: inherit;
+    color: #3A8C8E; /* Tab text color */
+    font-size: 18px; /* Adjust font size */
+    outline: none; /* Remove focus outline */
+    position: relative; /* Required for positioning underline */
+    transition: color 0.2s ease; /* Smooth color transition for hover */
+}
+
+.tab:hover {
+    /*color: #0BA378; /* Brighter green on hover */
+}
+
+.tab::after {
+    content: ""; /* Create the underline */
+    position: absolute;
+    bottom: -2px; /* Adjust distance from text */
+    left: 0;
+    width: 100%; /* Start as a full-width underline */
+    height: 2px; /* Thickness of the underline */
+    background-color: #3A8C8E; /* Bright green underline */
+    transform: scaleX(0); /* Shrink underline to invisible by default */
+    transform-origin: center; /* Expand/retract from the center */
+    transition: transform 0.3s ease; /* Smooth expand/retract animation */
+}
+
+.tab:hover::after {
+    transform: scaleX(1); /* Expand underline on hover */
+}
+
+.tab.selected {
+    font-weight: 600; /* Bold text for the active tab */
+}
+
+.tab.selected::after {
+    transform: scaleX(1); /* Keep the underline fully expanded for active tabs */
+}

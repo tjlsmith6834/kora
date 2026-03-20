@@ -1,0 +1,40 @@
+services:
+  validate-organization-id-function:
+    build:
+      context: .
+      dockerfile: Dockerfile.validateOrganizationId
+      platforms:
+        - "linux/amd64"
+    image: 430118846553.dkr.ecr.us-east-2.amazonaws.com/kora/accounts-service:validate-organization-id-function-latest
+
+  create-user-function:
+    build:
+      context: .
+      dockerfile: Dockerfile.createUser
+      platforms:
+        - "linux/amd64"
+    image: 430118846553.dkr.ecr.us-east-2.amazonaws.com/kora/accounts-service:create-user-function-latest
+
+  get-user-function:
+    build:
+      context: .
+      dockerfile: Dockerfile.getUser
+      platforms:
+        - "linux/amd64"
+    image: 430118846553.dkr.ecr.us-east-2.amazonaws.com/kora/accounts-service:get-user-function-latest
+
+  validate-public-key-function:
+    build:
+      context: .
+      dockerfile: Dockerfile.validatePublicKey
+      platforms:
+        - "linux/amd64"
+    image: 430118846553.dkr.ecr.us-east-2.amazonaws.com/kora/accounts-service:validate-public-key-function-latest
+
+  get-public-key-function:
+    build:
+      context: .
+      dockerfile: Dockerfile.getPublicKey
+      platforms:
+        - "linux/amd64"
+    image: 430118846553.dkr.ecr.us-east-2.amazonaws.com/kora/accounts-service:get-public-key-function-latest

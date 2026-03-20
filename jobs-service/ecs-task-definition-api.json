@@ -1,0 +1,40 @@
+{
+  "family": "jobs-api-task",
+  "executionRoleArn": "arn:aws:iam::430118846553:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::430118846553:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "containerDefinitions": [
+    {
+      "name": "jobs-api",
+      "image": "430118846553.dkr.ecr.us-east-2.amazonaws.com/kora/jobs-service:api-latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8003,
+          "name": "api",
+          "protocol": "tcp"
+        }
+      ],
+      "secrets": [
+        { "name": "DATABASE_URL", "valueFrom": "/kora/jobs/prod/db_url" },
+        { "name": "OPENAI_API_KEY", "valueFrom": "/kora/general/prod/open_ai/secret_key" },
+        { "name": "CELERY_BROKER_URL", "valueFrom": "/kora/celery/prod/broker_url_amqps"},
+        { "name": "CELERY_RESULTS_BACKEND_URL", "valueFrom": "/kora/celery/prod/results_backend_url"},
+        { "name": "AWS_ACCESS_KEY_ID", "valueFrom": "/kora/general/prod/aws/access_key_id"},
+        { "name": "AWS_SECRET_ACCESS_KEY", "valueFrom": "/kora/general/prod/aws/secret_access_key"},
+        { "name": "AWS_REGION", "valueFrom": "/kora/general/prod/aws/aws_region"}
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/jobs-service/api/api-task",
+          "awslogs-region": "us-east-2",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}

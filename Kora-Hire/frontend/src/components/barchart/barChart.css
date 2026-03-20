@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700&display=swap');
+
+.bar-chart-container {
+  height: 300px; /* Adjust the height of the chart container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  width: 100%; /* Ensures the canvas adjusts to the container's width */
+  height: 100%; /* Ensures the canvas adjusts to the container's height */
+  font-family: 'Lexend', sans-serif; /* Fallback to sans-serif if Lexend isn't available */
+}

@@ -1,0 +1,41 @@
+.form-group {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--spacing-sm);
+}
+
+label {
+    font-size: var(--font-size-h3);
+    margin-bottom: var(--spacing-xs);
+}
+
+.required {
+    color: red;
+    margin-right: 4px;
+}
+
+input {
+    font-family: var(--typeface-user-input);
+    padding: var(--spacing-xs);
+    border: var(--input-border);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-user-input);
+    margin: 0;
+}
+
+textarea {
+    font-family: var(--typeface-user-input);
+    padding: var(--spacing-xs);
+    border: var(--input-border);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-user-input);
+    overflow-y: auto;     /* Enable vertical scrolling */
+    overflow-x: hidden;
+    resize: none;
+}
+
+input[aria-invalid="true"] {
+    border-color: red;
+}

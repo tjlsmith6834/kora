@@ -1,0 +1,8 @@
+.summary-wrapper {
+    display: flex;
+    justify-content: space-between; /* Spread details and score apart */
+    align-items: center; /* Align content vertically in the center */
+    background-color: rgba(245, 245, 245, 0); /* Transparent background */
+    padding: 0; /* No padding around the wrapper */
+    border: none; /* Optional: Remove borders for a cleaner look */
+}

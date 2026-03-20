@@ -1,0 +1,7 @@
+.criteria-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16px;
+    margin: 16px;
+}

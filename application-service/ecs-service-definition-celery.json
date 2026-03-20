@@ -1,0 +1,33 @@
+{
+  "cluster": "kora-cluster-prod",
+  "serviceName": "applications-celery-service",
+  "taskDefinition": "applications-celery-task",
+  "launchType": "FARGATE",
+  "desiredCount": 1,
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": [
+        "subnet-0b6ae6c98bd260fac",
+        "subnet-0331005b22463e499",
+        "subnet-02b25656187b70d4f"
+      ],
+      "securityGroups": [
+        "sg-0006ca50cfa70bb29"
+      ],
+      "assignPublicIp": "DISABLED"
+    }
+  },
+  "serviceConnectConfiguration": {
+    "enabled": true,
+    "namespace": "kora.local",
+    "services": [
+      {
+        "portName": "celery",
+        "discoveryName": "applications-celery-service",
+        "clientAliases": [
+          { "dnsName": "jobs-api-service.kora.local", "port": 8004 }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+    "family": "apply-backend-task",
+    "executionRoleArn": "arn:aws:iam::430118846553:role/ecsTaskExecutionRole",
+    "taskRoleArn": "arn:aws:iam::430118846553:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": ["FARGATE"],
+    "cpu": "256",
+    "memory": "512",
+    "containerDefinitions": [
+        {
+            "name": "apply-backend",
+            "image": "430118846553.dkr.ecr.us-east-2.amazonaws.com/kora/apply:backend-latest",
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": 8001,
+                    "name": "backend",
+                    "protocol": "tcp"
+                }
+            ],
+            "environment": [
+                { "name": "ENVIRONMENT", "value": "production" },
+                { "name": "ALLOWED_ORIGINS", "value": "https://my.hirekora.com,http://localhost:63342,https://www.hirekora.com" }
+            ],
+            "secrets": [
+                    { "name": "JOBS_SERVICE_BASE_URL", "valueFrom": "/kora/jobs/prod/base_url"},
+                    { "name": "APPLICATIONS_SERVICE_BASE_URL", "valueFrom": "/kora/applications/prod/base_url"},
+                    { "name": "AWS_ACCESS_KEY_ID", "valueFrom": "/kora/general/prod/aws/access_key_id"},
+                    { "name": "AWS_SECRET_ACCESS_KEY", "valueFrom": "/kora/general/prod/aws/secret_access_key"},
+                    { "name": "AWS_REGION", "valueFrom": "/kora/general/prod/aws/aws_region"}
+            ],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/apply/backend/backend-task",
+                    "awslogs-region": "us-east-2",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
+        }
+    ]
+}

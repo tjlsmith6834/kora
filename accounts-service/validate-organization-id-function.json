@@ -1,0 +1,26 @@
+{
+  "FunctionName": "validate-organization-id-function",
+  "Role": "arn:aws:iam::430118846553:role/LambdaExecutionRoleAccountsService",
+  "PackageType": "Image",
+  "Code": {
+    "ImageUri": "430118846553.dkr.ecr.us-east-2.amazonaws.com/kora/accounts-service:validate-organization-id-function-latest"
+  },
+  "VpcConfig": {
+    "SubnetIds": [
+      "subnet-0b6ae6c98bd260fac",
+      "subnet-0331005b22463e499",
+      "subnet-02b25656187b70d4f"
+    ],
+    "SecurityGroupIds": [
+      "sg-065c57ffde15957ba"
+    ]
+  },
+  "Environment": {
+    "Variables": {
+      "NODE_ENV": "production"
+    }
+  },
+  "Timeout": 15,
+  "MemorySize": 512,
+  "Publish": true
+}

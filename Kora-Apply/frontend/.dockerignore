@@ -1,0 +1,13 @@
+node_modules/
+dist/
+build/
+.cache/
+
+.git/
+.idea/
+.vscode/
+
+*.log
+
+*.env
+*.env.*

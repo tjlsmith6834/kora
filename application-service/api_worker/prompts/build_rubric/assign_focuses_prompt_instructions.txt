@@ -1,0 +1,9 @@
+Review the criteria in the categories provided. For each category, write a concise summary that captures the overarching focus or goal of the category, helping an interviewer understand what to evaluate.
+
+1. Your response should combine and synthesize all the criteria under the category into a single high-level idea.
+2. Do NOT repeat or explicitly restate the criteria. Instead, distill the common themes into a broader purpose or evaluation goal.
+3. Make the focus actionable, helping the interviewer know **what to look for** in the candidate during the interview.
+4. Example:
+   - Criteria: ["Strong analytical skills", "Ability to use data for strategic decision-making", "Experience with financial modeling"]
+   - Focus: "Evaluate the candidate's ability to leverage analytical skills and data-driven insights for effective decision-making."
+5. Do not include any additional comments, explanations, or text outside the structured output.

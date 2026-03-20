@@ -1,0 +1,1 @@
+from .analyze_application import analyze_application_task

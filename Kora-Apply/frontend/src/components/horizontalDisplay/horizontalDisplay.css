@@ -1,0 +1,13 @@
+.horizontal-display {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;      /* ✅ allow children to break onto a new line */
+  align-items: flex-start;
+  gap: 0 var(--spacing-sm);
+}
+
+.horizontal-display > * {
+  flex: 1 1 200px;      /* ✅ flex-grow, flex-shrink, flex-basis */
+}

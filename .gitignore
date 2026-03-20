@@ -1,0 +1,39 @@
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+
+# Git internals accidentally copied around
+**/.git/
+
+# Python
+**/.venv/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+**/.mypy_cache/
+**/.aws-sam/
+
+# Node / frontend
+**/node_modules/
+**/dist/
+**/build/
+**/.cache/
+
+# Secrets / env files
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.*.example
+**/creds/*.json
+**/*service-account*.json
+
+# Logs and runtime
+**/*.log
+*.pid
+
+# Large local artifacts
+*.zip
+
+# ECS deployment configs
+**/ecs-*.json

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kora Apply SDK Preview</title>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const isDev = params.get("dev") === "1";
+    const jobID = params.get("jobID");
+    const publicKey = params.get("key");
+
+    // Load CSS
+    const cssLink = document.createElement("link");
+    cssLink.rel = "stylesheet";
+    cssLink.href = isDev
+      ? "http://localhost:3001/main.css"
+      : "https://sdk.hirekora.com/main.78c05fbe00505d8a1a94.css";
+    document.head.appendChild(cssLink);
+
+    // Load JS
+    const sdkScript = document.createElement("script");
+    sdkScript.src = isDev
+      ? "http://localhost:3001/kora-apply.js"
+      : "https://sdk.hirekora.com/kora-apply.js";
+
+    sdkScript.onload = () => {
+      const container = document.getElementById("apply-container");
+      if (!jobID || !publicKey) {
+        container.innerText = "Missing jobID or publicKey in URL.";
+        return;
+      }
+
+      if (!window.KoraApplyWidget || typeof window.KoraApplyWidget.init !== "function") {
+        container.innerText = "Error: SDK failed to load correctly.";
+        return;
+      }
+
+      container.innerHTML = ""; // Clear loading message
+      window.KoraApplyWidget.init("apply-container", { jobID, publicKey });
+    };
+
+    sdkScript.onerror = () => {
+      document.getElementById("apply-container").innerText =
+        "Error loading SDK script.";
+    };
+
+    document.head.appendChild(sdkScript);
+  </script>
+</head>
+<body>
+  <h1>Kora Apply Demo</h1>
+  <div id="apply-container">Loading…</div>
+</body>
+</html>

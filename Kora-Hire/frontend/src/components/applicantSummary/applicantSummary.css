@@ -1,0 +1,49 @@
+
+
+/* Wrapper */
+.summary-wrapper {
+    display: flex;
+    justify-content: space-between; /* Spread details and score apart */
+    align-items: center; /* Align content vertically in the center */
+    background-color: rgba(245, 245, 245, 0); /* Transparent background */
+    padding: 0; /* No padding around the wrapper */
+    border: none; /* Optional: Remove borders for a cleaner look */
+}
+
+/* Score and Label Container */
+.score-container {
+    display: flex;
+    flex-direction: column; /* Stack score and label vertically */
+    align-items: center; /* Center align the content horizontally */
+    width: auto; /* Flexible width */
+    padding: 20px; /* Spacing around the score */
+    margin: 0; /* No additional margin */
+    flex-grow: 1; /* Allows flexibility for the content layout */
+}
+
+/* Score Number Styling */
+.score-container h2 {
+    font-family: "baloo 2", sans-serif;
+    font-size: 60px;
+    font-weight: 600; /* Bold weight for emphasis */
+    text-align: center;
+    margin: 0; /* Remove default spacing */
+    padding: 0; /* Remove padding */
+    border: none;
+}
+
+/* Score Label Styling */
+.score-container h3 {
+    font-size: 14px; /* Slightly smaller font for the label */
+    color: #4A4A4A; /* Subtle gray color for contrast */
+    text-align: center;
+    white-space: nowrap; /* Prevent wrapping */
+    margin: 0;
+    padding: 0;
+}
+
+.applicant-details {
+    flex-grow: 2; /* Occupy remaining space in the wrapper */
+    padding-left: 20px;
+    padding-right: 20px;
+}

@@ -1,0 +1,8 @@
+Output the results in this JSON format:
+[
+  {
+    "category": "<Category Name>",
+    "focus": "<High-level summary of the category's goal>"
+  },
+  ...
+]

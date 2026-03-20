@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# Git / editor
+.git/
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Docker build artifacts
+docker-compose*.yml
+Dockerfile*
+
+# Secrets
+/creds
+*.env
+*.env.*

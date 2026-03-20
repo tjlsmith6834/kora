@@ -1,0 +1,2 @@
+    1:  Limit your analysis to the context of the rubric category, the evaluation focus, and the criteria above.
+    2:  Now read job description and list skills and experiences the candidate must possess in order to meet the criteria.

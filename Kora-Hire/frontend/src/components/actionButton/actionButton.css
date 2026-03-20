@@ -1,0 +1,53 @@
+/* Base button */
+.action-button {
+    width: 100%;
+    max-width: 1140px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    flex: 1;
+    flex-basis: auto;
+    border: none;
+    border-radius: 8px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+    color: white;
+}
+
+.action-button.primary {
+    background-color: var(--color-positive);
+}
+.action-button.primary:hover:not(:disabled) {
+  background-color: var(--color-positive-hover);
+  box-shadow: var(--card-shadow);
+}
+
+.action-button.secondary {
+    background-color: var(--color-negative);
+}
+.action-button.secondary:hover:not(:disabled) {
+    background-color: var(--color-negative-hover);
+    box-shadow: var(--card-shadow);
+}
+
+.action-button.tertiary {
+    background-color: var(--color-tertiary-base);
+}
+
+.action-button.tertiary:hover:not(:disabled) {
+    background-color: var(--color-tertiary-hover);
+    box-shadow: var(--card-shadow);
+}
+
+.action-button:hover:not(:disabled){
+    transform: scale(1.02);
+}
+
+/* DISABLED */
+.action-button:disabled {
+    background-color: #CCCCCC;    /* light grey */
+    color: #666666;               /* darker grey text for readability */
+    cursor: not-allowed;
+}

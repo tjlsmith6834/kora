@@ -1,0 +1,8 @@
+services:
+  jobs-api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+      platforms:
+        - "linux/amd64"
+    image: 430118846553.dkr.ecr.us-east-2.amazonaws.com/kora/jobs-service:api-latest

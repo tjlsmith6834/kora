@@ -1,0 +1,23 @@
+.list-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 1140px;
+    margin: 0 auto; /* Horizontally centers the element */
+    margin-top: var(--spacing-md);
+}
+
+.pagination {
+  display: flex;
+  justify-content: right;   /* center horizontally */
+  align-items: center;       /* vertically align */
+  gap: 20px;                 /* space between items */
+  margin-top: 20px;          /* space above the paginator */
+}
+
+.card-list-empty {
+    justify-content: center;
+    text-align: center;
+}
+

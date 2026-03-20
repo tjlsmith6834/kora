@@ -1,0 +1,8 @@
+services:
+  applications-api:
+    build:
+      context: .
+      dockerfile: api_worker/Dockerfile
+      platforms:
+        - "linux/amd64"
+    image: 430118846553.dkr.ecr.us-east-2.amazonaws.com/kora/applications-service:api-latest

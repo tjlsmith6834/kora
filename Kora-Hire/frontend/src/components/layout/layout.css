@@ -1,0 +1,17 @@
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-wrapper {
+  display: flex;
+  flex: 1;
+}
+
+.main-content {
+  flex: 1;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}

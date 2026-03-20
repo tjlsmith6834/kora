@@ -1,0 +1,41 @@
+{
+  "cluster": "kora-cluster-prod",
+  "serviceName": "apply-backend-service",
+  "taskDefinition": "apply-backend-task",
+  "launchType": "FARGATE",
+  "desiredCount": 1,
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": [
+        "subnet-0b6ae6c98bd260fac",
+        "subnet-0331005b22463e499",
+        "subnet-02b25656187b70d4f"
+      ],
+      "securityGroups": [
+        "sg-04aaba0a2ff589956"
+      ],
+      "assignPublicIp": "DISABLED"
+    }
+  },
+  "serviceConnectConfiguration": {
+    "enabled": true,
+    "namespace": "kora.local",
+    "services": [
+      {
+        "portName": "backend",
+        "discoveryName": "apply-backend-service",
+        "clientAliases": [
+          { "dnsName": "apply-backend-service.kora.local", "port": 8001 }
+        ]
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "/apply-service/backend/service-connect",
+        "awslogs-region": "us-east-2",
+        "awslogs-stream-prefix": "ecs"
+      }
+    }
+  }
+}

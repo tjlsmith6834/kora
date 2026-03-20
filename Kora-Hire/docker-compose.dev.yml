@@ -1,0 +1,44 @@
+services:
+  kora-hire-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      args:
+        ENVIRONMENT: development  # Set development mode
+    container_name: kora-hire-backend
+    ports:
+      - "8000:8000"
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./backend:/app
+      - ./backend/creds/kora-6b6af-firebase-adminsdk-fbsvc-a9d050b8c8.json:/secrets/firebase.json
+    env_file:
+      - backend/.env.dev
+    environment:
+      - ENVIRONMENT=development
+    networks:
+      - kora_dev_network
+    restart: always
+
+  kora-hire-frontend:
+    build:
+      context: ./frontend
+      args:
+        ENVIRONMENT: development
+    container_name: kora-hire-frontend
+    ports:
+      - "3000:3000"
+    volumes:
+        - ./frontend:/app:delegated
+    env_file:
+      - frontend/.env.development
+    environment:
+      - ENVIRONMENT=development
+    networks:
+      - kora_dev_network
+    restart: always
+    command: ["npm", "run", "start"]
+
+networks:
+  kora_dev_network:
+    name: kora_dev_network

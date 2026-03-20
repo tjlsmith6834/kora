@@ -1,0 +1,55 @@
+# Ignore Python virtual environments
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore environment files (Secrets)
+.env
+.env.dev
+.env.local
+.env.production
+.env.development
+
+# Ignore logs & temporary files
+*.log
+*.pid
+*.out
+*.err
+*.swp
+nohup.out
+debug.log
+*.sqlite3
+
+# Ignore build artifacts
+dist/
+build/
+*.egg-info/
+pip-wheel-metadata/
+*.whl
+
+# Ignore Docker-related files
+postgres_data/
+docker-compose.override.yml
+*.sock
+
+# Ignore IDE and editor-specific files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+.DS_Store
+
+# Ignore coverage and testing-related files
+.coverage
+htmlcov/
+*.cover
+*.cov
+nosetests.xml
+test-results.xml
+junit.xml
+pytest_cache/
+
+# Ignore LangChain Cache (if applicable)
+*.langchain_db

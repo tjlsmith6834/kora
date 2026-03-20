@@ -1,0 +1,17 @@
+/*actionButtonContainer.css*/
+
+.action-button-container {
+  width: 100%;
+  padding-top: var(--spacing-sm);
+}
+
+.center-button {
+  display: flex;
+  width: 100%;
+}
+
+.center-button > .action-button {
+  margin: 0;         /* no more auto margins */
+  max-width: none;   /* remove the 1140px cap if you want it edge-to-edge */
+  flex: 1;           /* grow to fill the wrapper’s 100% width */
+}

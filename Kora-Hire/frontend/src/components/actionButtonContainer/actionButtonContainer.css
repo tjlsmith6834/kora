@@ -1,0 +1,22 @@
+.action-button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.choice-button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+}
+
+.choice-button-container > * {
+  flex: 1; /* ✅ Equal width */
+}
+
+.center-button {
+  display: flex;
+  width: 100%;
+}

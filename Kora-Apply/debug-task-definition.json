@@ -1,0 +1,18 @@
+{
+    "family": "debug-container",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": ["FARGATE"],
+    "cpu": "256",
+    "memory": "512",
+    "executionRoleArn": "arn:aws:iam::430118846553:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "name": "debug-container",
+            "image": "amazonlinux:latest",
+            "essential": true,
+            "command": ["/bin/sh"],
+            "memory": 512,
+            "cpu": 256
+        }
+    ]
+}

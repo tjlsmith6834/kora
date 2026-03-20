@@ -1,0 +1,13 @@
+	1.	Understand the Context:
+	    •	Use the profile rubric to identify the evaluation focus and criteria for each category.
+	    •	Use the gaps to generate questions addressing areas where evidence is missing or incomplete.
+	2.	Generate Probing Questions Based on Concrete Examples:
+	    •	Ensure all questions ask for a specific example of the candidate’s past experience, focusing on outcomes, decisions, or actions taken.
+	    •	Avoid hypothetical or general “how” questions.
+	    •	Questions should prompt the candidate to share detailed stories or scenarios that illustrate their qualifications.
+	3.	For each rubric category, list probing questions aligned with the evaluation focus and relevant gaps.
+        •	Category Name
+            •	[Probing question 1 asking for a concrete example]
+            •	[Probing question 2 asking for a concrete example]
+            •	[Probing question 3 asking for a concrete example]
+            •	(and so on…)

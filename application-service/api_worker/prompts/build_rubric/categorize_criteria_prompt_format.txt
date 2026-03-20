@@ -1,0 +1,29 @@
+### Output format:
+1. Strictly output the result in **valid JSON format**.
+2. Do **NOT** include any additional keys like `"rubric"` or `"rubric_criteria"`.
+3.	Ensure the output begins and ends with valid JSON curly braces {}.
+4.	Do NOT include extra wrapper objects or keys like "rubric" or "rubric_criteria". The top-level key must be "rubric_categories".
+5. The **JSON should start directly with "rubric_categories"** and include only the following structure:
+
+```json
+{
+    "rubric_categories": [
+        {
+            "category": "<category name>",
+            "criteria": [
+                "<criterion 1>",
+                "<criterion 2>",
+                "<criterion 3>"
+            ]
+        },
+        {
+            "category": "<category name>",
+            "criteria": [
+                "<criterion 1>",
+                "<criterion 2>",
+                "<criterion 3>"
+            ]
+        }
+    ]
+}
+

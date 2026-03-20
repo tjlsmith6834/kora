@@ -1,0 +1,39 @@
+{
+  "cluster": "kora-cluster-prod",
+  "serviceName": "jobs-api-service",
+  "taskDefinition": "jobs-api-task:5",
+  "launchType": "FARGATE",
+  "desiredCount": 1,
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": [
+        "subnet-0b6ae6c98bd260fac",
+        "subnet-0331005b22463e499",
+        "subnet-02b25656187b70d4f"
+      ],
+      "securityGroups": ["sg-0533be2fc8b67fefd"],
+      "assignPublicIp": "DISABLED"
+    }
+  },
+  "serviceConnectConfiguration": {
+    "enabled": true,
+    "namespace": "kora.local",
+    "services": [
+      {
+        "portName": "api",
+        "discoveryName": "jobs-api-service",
+        "clientAliases": [
+          { "dnsName": "jobs-api-service.kora.local", "port": 8003 }
+        ]
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "/jobs-service/api/service-connect",
+        "awslogs-region": "us-east-2",
+        "awslogs-stream-prefix": "ecs"
+      }
+    }
+  }
+}

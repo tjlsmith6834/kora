@@ -1,0 +1,73 @@
+/* rubricTable.css */
+
+/* Container around the table to allow horizontal scroll if needed */
+.table-container {
+  width: 100%;
+}
+
+/* Base table styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.table td {
+  vertical-align: middle;
+  display: table-cell;
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  padding-right: var(--spacing-sm)
+}
+
+.table thead th {
+  text-align: left;
+  border-bottom: var(--soft-border);
+  padding-right: var(--spacing-sm);
+}
+
+.table .center-cell {
+  text-align: center;
+  padding-right: var(--spacing-sm);
+}
+
+.table .center-cell .center-wrap{
+  display: inline-flex;          /* inline so the cell remains table-sized */
+  align-items: center;           /* vertical center */
+  justify-content: center;       /* horizontal center */
+  height: 100%;                  /* fill the cell's height */
+  width: 100%;                   /* optional, if you want full-width centering */
+  white-space: nowrap;
+}
+
+.table tbody td {
+  border-bottom: var(--extra-soft-border);
+}
+
+/* Inputs inside editable cells */
+.table input {
+  width: 100%;
+  border: var(--soft-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-user-input);
+  box-sizing: border-box;
+}
+
+.table input.weight-input {
+  text-align: left;
+}
+
+.table textarea {
+  display: block;
+  width: 100%;
+  border: var(--soft-border);
+  border-radius: var(--radius-sm);
+  box-sizing: border-box;
+}
+
+.cat-button {
+  margin-top: var(--spacing-xs);
+}
+

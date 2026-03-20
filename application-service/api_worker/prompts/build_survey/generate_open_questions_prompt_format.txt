@@ -1,0 +1,13 @@
+### Output Format:
+1. Strictly output the result in valid JSON format.
+2. Do NOT include any explanations, comments, or extra text.
+3. Ensure the output starts and ends with JSON curly braces {{ }}.
+4. Follow this exact JSON structure:
+    {
+        "open_questions": [
+            {category: <category name>,
+            questions: [<list of probing questions>]},
+            {category: <category name>,
+            questions: [<list of probing questions>]},
+        ]
+    }

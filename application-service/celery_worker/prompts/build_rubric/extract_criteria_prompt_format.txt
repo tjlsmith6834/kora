@@ -1,0 +1,8 @@
+### Output format:
+1. Strictly output the result as a single list.
+2. Do NOT include any explanations, comments, or extra text.
+
+### Example Output:
+- Expertise in TypeScript and Next.js (mandatory).
+- Experience with technical leadership, including system architecture and infrastructure.
+- Builder mentality: thrives in ambiguity and solves open-ended challenges.

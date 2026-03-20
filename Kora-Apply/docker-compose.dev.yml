@@ -1,0 +1,60 @@
+services:
+  kora-apply-backend:
+    build:
+      context: ./backend
+      args:
+        ENVIRONMENT: development  # Set development mode
+    container_name: kora-apply-backend
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./backend:/app  # Enable live reloading
+    env_file:
+      - backend/.env.dev
+    environment:
+      - ENVIRONMENT=development
+      - DEBUG=True
+    networks:
+      - kora_dev_network
+    restart: always
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8001", "--reload"]
+
+  kora-apply-sdk:
+    build:
+      context: ./frontend
+      args:
+        ENVIRONMENT: development
+    container_name: kora-apply-sdk
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./frontend/src:/app/src
+      - /app/node_modules
+    env_file:
+      - frontend/.env.development
+    environment:
+      - ENVIRONMENT=development
+    depends_on:
+      - kora-apply-backend
+    networks:
+      - kora_dev_network
+
+    restart: always
+    command: [ "npm", "run", "start" ]
+
+  sdk-test:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./test:/usr/share/nginx/html:ro
+    depends_on:
+      - kora-apply-sdk
+    networks:
+      - kora_dev_network
+    restart: always
+
+networks:
+  kora_dev_network:
+    name: kora_dev_network
+    external: true

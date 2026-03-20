@@ -1,0 +1,43 @@
+services:
+  # API
+  applications-api:
+    build:
+      context: .
+      dockerfile: api_worker/Dockerfile
+    restart: always
+    env_file:
+      - ./.env.dev
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./api_worker:/app/api_worker
+      - ./common:/app/common
+      - ./scripts:/app/scripts
+    networks:
+      - kora_dev_network
+    logging:
+      driver: "json-file"
+    command: ["uvicorn", "api_worker.main:app", "--host", "0.0.0.0", "--port", "8002", "--reload"]
+
+  # Celery Worker
+  applications-celery:
+    build:
+      context: .
+      dockerfile: celery_worker/Dockerfile
+    restart: always
+    env_file:
+      - ./.env.dev
+    volumes:
+      - ./celery_worker:/app/celery_worker
+      - ./common:/app/common
+    depends_on:
+      - applications-api
+    networks:
+      - kora_dev_network
+    logging:
+      driver: "json-file"
+
+networks:
+  kora_dev_network:
+    name: kora_dev_network
+    external: true

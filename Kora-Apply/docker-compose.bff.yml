@@ -1,0 +1,8 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      platforms:
+        - "linux/amd64"
+    image: 430118846553.dkr.ecr.us-east-2.amazonaws.com/kora/apply:backend-latest

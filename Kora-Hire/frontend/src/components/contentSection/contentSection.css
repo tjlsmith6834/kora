@@ -1,0 +1,5 @@
+.content-section {
+  height: 100%; /* Ensure the parent stretches */
+  max-width: 920px;
+  margin: 0 auto; /* Horizontally centers the element */
+}
